@@ -79,6 +79,16 @@ struct ContentView: View{
 
         }
     }
+
+    func logOut() {
+        do {
+            try Auth.auth().signOut()
+            print("Successfully signed out")
+            isLoggedIn = false
+        } catch let error {
+            print("Error signing out: \(error.localizedDescription)")
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
