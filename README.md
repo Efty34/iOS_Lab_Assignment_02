@@ -21,10 +21,10 @@ In the previous iOS lab, we learned how to integrate Firestore with an Xcode app
   
 ## Screenshots
 
-<img src="https://github.com/user-attachments/assets/09d12181-3479-4921-aea4-8277e6768841" height="400">
-<img src="https://github.com/user-attachments/assets/4796e421-9332-4ab5-a1af-43e36aca93c1" height="400">
-<img src="https://github.com/user-attachments/assets/1de5302e-25f7-4a5e-a580-8bbde7281044" height="400">
-<img src="https://github.com/user-attachments/assets/6fc77ed2-4eef-4337-98c9-fbdad12d6932" height="400">
-<img src="https://github.com/user-attachments/assets/595bc34e-706f-42bf-8dec-84503371798b" height="400">
-<img src="https://github.com/user-attachments/assets/bc52334e-b310-41f9-a7cf-11c40b274c94" height="400">
+<img src="https://github.com/user-attachments/assets/04e932e2-4baf-426c-a595-1a031d77b2f0" height="400">
+<img src="https://github.com/user-attachments/assets/5b33b53f-0a48-4915-88b7-a9e5ccea4a58" height="400">
+<img src="https://github.com/user-attachments/assets/65273a02-2731-4eb8-be19-a4afc9d1ef7a" height="400">
+<img src="https://github.com/user-attachments/assets/b875a06c-a7ee-450a-8a0e-7602177d7e81" height="400">
+<img src="https://github.com/user-attachments/assets/8743c205-bcfd-4221-9499-5a2d5463ddb0" height="400">
+<img src="https://github.com/user-attachments/assets/aa40cadf-82c5-42d3-a106-bd9038f9571e" height="400">
 
