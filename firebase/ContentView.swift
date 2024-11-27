@@ -147,7 +147,36 @@ struct ContentView: View{
             }
         }
     }
+
 }
+    func addItemToFirestore() {
+        if !newItem.isEmpty {
+            db.collection("items").addDocument(data: [
+                "item": newItem,
+                "timestamp": Timestamp()
+            ]) { error in
+                if let error = error {
+                    print("Error adding document: \(error.localizedDescription)")
+                } else {
+                    newItem = ""
+                    fetchItems()
+                }
+            }
+        }
+    }
+
+     func fetchItems() {
+        db.collection("items").order(by: "timestamp", descending: true)
+            .getDocuments { snapshot, error in
+                if let error = error {
+                    print("Error fetching documents: \(error.localizedDescription)")
+                } else {
+                    items = snapshot?.documents.compactMap { document in
+                        return document.data()["item"] as? String
+                    } ?? []
+                }
+            }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
