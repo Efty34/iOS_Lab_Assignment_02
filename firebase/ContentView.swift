@@ -8,6 +8,74 @@ struct ContentView: View{
     var body: some View {
         NavigationView {
 
+             VStack {
+                  
+                        Text("Welcome")
+                            .font(.largeTitle)
+                            .padding()
+
+             
+                        ZStack(alignment: .leading) {
+                            TextField("", text: $email)
+                                .foregroundColor(.blue)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .padding(.horizontal)
+                            
+                            if email.isEmpty {
+                                Text("Email")
+                                    .foregroundColor(.gray)
+                                    .padding(.leading, 20)
+                            }
+                        }
+                        .padding(.bottom)
+
+               
+                        ZStack(alignment: .leading) {
+                            SecureField("", text: $password)
+                                .foregroundColor(.blue)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .padding(.horizontal)
+                            
+                            if password.isEmpty {
+                                Text("Password")
+                                    .foregroundColor(.gray)
+                                    .padding(.leading, 20)
+                            }
+                        }
+                        .padding(.bottom)
+
+
+                        if let errorMessage = errorMessage {
+                            Text(errorMessage)
+                                .foregroundColor(.red)
+                                .padding()
+                        }
+                        
+             
+                        Button(action: {
+                            login()
+                        }) {
+                            Text("Login")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.blue)
+                                .cornerRadius(8)
+                        }
+
+             
+                        Button(action: {
+                            register()
+                        }) {
+                            Text("Sign Up")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.blue)
+                                .cornerRadius(8)
+                        }
+                        .padding()
+                    }
 
         }
     }
