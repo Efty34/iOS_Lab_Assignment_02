@@ -79,6 +79,27 @@ struct ContentView: View{
 
         }
     }
+    // Register
+    func register() {
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if let error = error {
+                self.errorMessage = error.localizedDescription
+            } else {
+                self.isLoggedIn = true
+            }
+        }
+    }
+
+    // Login
+     func login() {
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                self.errorMessage = error.localizedDescription
+            } else {
+                self.isLoggedIn = true
+            }
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
