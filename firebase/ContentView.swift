@@ -9,6 +9,53 @@ struct ContentView: View{
         NavigationView {
 
              VStack {
+                if isLoggedIn {
+
+                    VStack {
+                        Text("Welcome to Anik Ekka!")
+                            .font(.largeTitle)
+                            .padding()
+                        
+
+                        TextField("Enter new item", text: $newItem)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.horizontal)
+                        
+              
+                        Button(action: {
+                            addItemToFirestore()
+                        }) {
+                            Text("Add Item")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.blue)
+                                .cornerRadius(8)
+                        }
+                        .padding()
+                        
+                      
+                        List(items, id: \.self) { item in
+                            Text(item)
+                        }
+                        
+
+                        Button(action: {
+                            logOut()
+                        }) {
+                            Text("Log Out")
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.blue)
+                                .cornerRadius(8)
+                        }
+                        .padding()
+                    }
+                    .onAppear {
+                        fetchItems()
+                    }
+                } else {
                   
                         Text("Welcome")
                             .font(.largeTitle)
@@ -100,6 +147,7 @@ struct ContentView: View{
             }
         }
     }
+}
 }
 
 struct ContentView_Previews: PreviewProvider {
